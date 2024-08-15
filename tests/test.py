@@ -2,21 +2,19 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
 
-# Ścieżka do geckodriver
-driver_path = 'D:/SwagLabGUITesting/geckodriver.exe'  
+driver_path = 'D:/SwagLabGUITesting/drivers/geckodriver.exe'  
 
-# Ustawienia FirefoxOptions
+"""FirefoxOptions Settings"""
 options = Options()
 service = Service(driver_path)
 
-# Inicjalizacja WebDrivera z podaną ścieżką
+"""Initializing WebDriver with the given path"""
 driver = webdriver.Firefox(service=service, options=options)
 
-# Otwórz stronę Google
-driver.get('https://www.google.com')
+driver.get('https://www.saucedemo.com/')
 
-# Wypisz tytuł strony
+"""Write the title of the page"""
 print(driver.title)
 
-# Zamknij przeglądarkę
+"""Close browser"""
 driver.quit()
