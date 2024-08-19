@@ -6,6 +6,7 @@ from selenium.webdriver.firefox.options import Options
 
 from config.config import driver_path, url
 
+
 """FirefoxOptions Settings"""
 options = Options()
 service = Service(driver_path)
@@ -24,6 +25,10 @@ username_input.send_keys("standard_user")
 password_input.send_keys("secret_sauce")
 login_button.click()
 
+sidebar_button = driver.find_element(By.ID, "react-burger-menu-btn")
+logout_button = driver.find_element(By.ID, "logout_sidebar_link")   
+sidebar_button.click()
+logout_button.click()
 
 """Close browser"""
 driver.quit()
