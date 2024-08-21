@@ -1,4 +1,4 @@
-"""Test of completing the checkout process successfully after login to system with valid data"""
+"""Test of completing the checkout and order process successfully after login to system with valid data"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -64,7 +64,7 @@ def test_checkout(setup):
         """Go back to main page"""
         driver.find_element(By.ID, "back-to-products").click()
 
-        print("Test passed: Checkout process completed successfully.")
+        print("Test passed: Checkout and order process completed successfully.")
     
     finally:
         """Log out and close browser"""
