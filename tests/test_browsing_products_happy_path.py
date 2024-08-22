@@ -2,7 +2,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from conftest import setup, logout
+from conftest import setup, login, logout
 
 
 def test_browsing_product(setup):
@@ -10,13 +10,7 @@ def test_browsing_product(setup):
         driver = setup
 
         """Log in to the website"""
-        username_input = driver.find_element(By.ID, "user-name")
-        password_input = driver.find_element(By.ID,"password")
-        login_button = driver.find_element(By.ID,"login-button")
-
-        username_input.send_keys("standard_user")
-        password_input.send_keys("secret_sauce")
-        login_button.click()
+        login(driver)
 
         """Verify successful login"""
         header_title = driver.find_element(By.CLASS_NAME, "header_label").text
@@ -70,4 +64,4 @@ def test_browsing_product(setup):
 
     finally:
         """Log out and close browser"""
-        logout
+        logout(driver)
