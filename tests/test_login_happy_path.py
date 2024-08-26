@@ -1,19 +1,21 @@
 """Test login to system with valid data"""
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 
-from conftest import setup, login, logout
-
+from conftest import setup
+from pages.login_page import LoginPage
+from pages.inventory_page import InventoryPage
 
 def test_succesfull_login(setup):
-
     driver = setup
 
-    """Log in to the website"""
-    login(driver)
+    """Login to system with valid data"""
+    login_page = LoginPage(driver)
+    login_page.login("standard_user", "secret_sauce")
 
+    """Verification that login was successful"""
+    inventory_page = InventoryPage(driver)
     assert "inventory.html" in driver.current_url, "Login failed or incorrect page loaded"
-    header_title = driver.find_element(By.CLASS_NAME, "title").text
-    assert header_title == "Products", "Login successful but incorrect page title"
+    assert inventory_page.get_header_title() == "Products", "Login successful but incorrect page title"
 
-    logout(driver)
+    """Logout and close browser"""
+    inventory_page.logout()
