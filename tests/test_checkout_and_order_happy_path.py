@@ -2,19 +2,23 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from conftest import setup, login, logout
+from conftest import setup
+from pages.login_page import LoginPage
+from pages.inventory_page import InventoryPage
 
 
 def test_checkout(setup):
     try:
         driver = setup
 
-        """Log in to the website"""
-        login(driver)
+        """Login to system with valid data"""
+        login_page = LoginPage(driver)
+        login_page.login("standard_user", "secret_sauce")
 
-        """Verify successful login"""
-        header_title = driver.find_element(By.CLASS_NAME, "header_label").text
-        assert header_title == "Swag Labs", "Login failed or incorrect page loaded"
+        """Verification that login was successful"""
+        inventory_page = InventoryPage(driver)
+        assert "inventory.html" in driver.current_url, "Login failed or incorrect page loaded"
+        assert inventory_page.get_header_title() == "Products", "Login successful but incorrect page title"
 
         """Add the first product to the cart"""
         product_name1 = "Sauce Labs Backpack"
@@ -62,5 +66,5 @@ def test_checkout(setup):
     
     finally:
         """Log out and close browser"""
-        logout(driver)
+        inventory_page.logout()
         
