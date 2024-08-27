@@ -31,11 +31,33 @@ Our tests are meticulously organized to ensure clarity, maintainability, and eas
 
 - **`tests/config/`**: The command center where we store all the necessary configurations, including browser drivers and URLs. This is the hub that guides our tests through the SwagLabs interface with precision.
 
-- **`/conftest.py`**: The strategic base where shared fixtures and configurations reside, ensuring our tests are streamlined and efficient.
+- **`tests/conftest.py`**: The strategic base where shared fixtures and configurations reside, ensuring our tests are streamlined and efficient.
 
 ## Example Tests
 
-Our tests cover everything from logging in, browsing products, adding items to the cart, and verifying the checkout process. Each test is designed to simulate real user interactions, ensuring that the SwagLabs interface is always ready for action.
+```python
+"""Test login to system with valid data"""
+from selenium import webdriver
+
+from conftest import setup
+from pages.login_page import LoginPage
+from pages.inventory_page import InventoryPage
+
+def test_succesfull_login(setup):
+    driver = setup
+
+    """Login to system with valid data"""
+    login_page = LoginPage(driver)
+    login_page.login("standard_user", "secret_sauce")
+
+    """Verification that login was successful"""
+    inventory_page = InventoryPage(driver)
+    assert "inventory.html" in driver.current_url, "Login failed or incorrect page loaded"
+    assert inventory_page.get_header_title() == "Products", "Login successful but incorrect page title"
+
+    """Logout and close browser"""
+    inventory_page.logout()
+```
 
 ## How to Contribute
 
