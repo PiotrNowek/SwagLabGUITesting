@@ -1,17 +1,20 @@
 """Test login to system with valid data"""
 from selenium import webdriver
+import pytest
 
 from conftest import setup
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 
 
-def test_succesfull_login(setup):
+"""Test login with different usernames"""
+@pytest.mark.parametrize("username", ["standard_user", "problem_user", "performance_glitch_user", "error_user", "visual_user"])
+def test_succesfull_login(setup, username):
     driver = setup
 
     """Login to system with valid data"""
     login_page = LoginPage(driver)
-    login_page.login("standard_user", "secret_sauce")
+    login_page.login(username, "secret_sauce")
 
     """Verification that login was successful"""
     inventory_page = InventoryPage(driver)
