@@ -2,16 +2,16 @@
 
 ## About the Project
 
-Welcome to the ultimate challenge in the world of web UI testing! Our mission: to explore and test the SwagLabs e-commerce galaxy using the powerful Selenium framework. Join us on this journey where we leave no bug unchallenged and ensure the SwagLabs experience is flawless!
+Welcome to the ultimate challenge in the world of web UI testing! My mission: to explore and test the SwagLabs e-commerce galaxy using the powerful Selenium framework. Join me on this journey where we leave no bug unchallenged and ensure the SwagLabs experience is flawless!
 
 ## Goal
 
-When the precision of Selenium meets the vast expanse of SwagLabs, we ensure every click, every product, and every transaction is tested to perfection. Our goal is to create robust tests that make the SwagLabs interface run smoother than a droid in peak condition!
+When the precision of Selenium meets the vast expanse of SwagLabs, I ensure every click, every product, and every transaction is tested to perfection. My goal is to create robust tests that make the SwagLabs interface run smoother than a droid in peak condition!
 
 ## Features
 
-- **Selenium WebDriver**: Our hyperdrive for navigating through the SwagLabs website, ensuring we interact with every element as intended.
-- **Pytest**: The lightsaber of our testing arsenal, making sure our tests are sharp, efficient, and ready to slice through any bugs.
+- **Selenium WebDriver**: My hyperdrive for navigating through the SwagLabs website, ensuring I interact with every element as intended.
+- **Pytest**: The lightsaber of my testing arsenal, making sure my tests are sharp, efficient, and ready to slice through any bugs.
 
 ## How to Run
 
@@ -21,17 +21,17 @@ When the precision of Selenium meets the vast expanse of SwagLabs, we ensure eve
 
 ## Test Structure
 
-Our tests are meticulously organized to ensure clarity, maintainability, and ease of use. Here's the breakdown:
+My tests are meticulously organized to ensure clarity, maintainability, and ease of use. Here's the breakdown:
 
-- **`tests/`**: The battleground where our Web UI test cases are executed. May your tests be as accurate as a sharpshooter's aim!
+- **`tests/`**: The battleground where my Web UI test cases are executed. May your tests be as accurate as a sharpshooter's aim!
 
-- **`drivers/`**: The hangar where we keep our browser drivers, such as `geckodriver` for Firefox. These drivers are essential for steering the Selenium WebDriver through the SwagLabs interface.
+- **`drivers/`**: The hangar where I keep my browser drivers, such as `geckodriver` for Firefox. These drivers are essential for steering the Selenium WebDriver through the SwagLabs interface.
 
-- **`reports/`**: The archive where we store detailed test reports. Here, you can find logs, screenshots, and summaries of each test run, helping us track the performance and outcomes of our test suite. 
+- **`reports/`**: The archive where I store detailed test reports. Here, you can find logs, screenshots, and summaries of each test run, helping us track the performance and outcomes of my test suite. 
 
-- **`tests/config/`**: The command center where we store all the necessary configurations, including browser drivers and URLs. This is the hub that guides our tests through the SwagLabs interface with precision.
+- **`tests/config/`**: The command center where I store all the necessary configurations, including browser drivers and URLs. This is the hub that guides my tests through the SwagLabs interface with precision.
 
-- **`tests/conftest.py`**: The strategic base where shared fixtures and configurations reside, ensuring our tests are streamlined and efficient.
+- **`tests/conftest.py`**: The strategic base where shared fixtures and configurations reside, ensuring my tests are streamlined and efficient.
 
 ## Example Tests
 
@@ -110,7 +110,7 @@ def test_checkout(setup):
 ## How to Contribute
 
 1. **Fork the Repository**: Join the SwagLabs Test Crusaders by forking the repo and adding your unique testing strategies.
-2. **Create Pull Requests**: Strengthen our forces by submitting your improvements and helping us maintain the integrity of SwagLabs!
+2. **Create Pull Requests**: Strengthen my forces by submitting your improvements and helping me maintain the integrity of SwagLabs!
 
 ## About the Author
 
