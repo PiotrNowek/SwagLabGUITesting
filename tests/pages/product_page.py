@@ -32,3 +32,7 @@ class ProductPage:
 
     def get_not_found_message(self):
         return self.driver.find_element(*self.not_found_message_locator).text
+
+    def go_to_non_existing_product(self, product_id):
+        self.driver.get(f"https://www.saucedemo.com/inventory-item.html?id={product_id}")
+
