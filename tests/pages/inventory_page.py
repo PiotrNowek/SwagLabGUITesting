@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class InventoryPage:
     def __init__(self, driver):
@@ -9,8 +11,11 @@ class InventoryPage:
         return self.header_title.text
 
     def logout(self):
-        sidebar_button = self.driver.find_element(By.ID, "react-burger-menu-btn")
-        logout_button = self.driver.find_element(By.ID, "logout_sidebar_link")
+        wait = WebDriverWait(self.driver, 5)
+        sidebar_button = wait.until(EC.element_to_be_clickable((By.ID, "react-burger-menu-btn")))
         sidebar_button.click()
+        logout_button = wait.until(EC.element_to_be_clickable((By.ID, "logout_sidebar_link")))
         logout_button.click()
         self.driver.quit()
+
+        

@@ -49,9 +49,4 @@ def test_checkout_failure(setup):
     
     finally:
         """Log out and close browser"""
-        sidebar_button = driver.find_element(By.ID, "react-burger-menu-btn")
-        logout_button = driver.find_element(By.ID, "logout_sidebar_link")
-        sidebar_button.click()
-        logout_button.click()
-        driver.quit()
-       
+        inventory_page.logout()
