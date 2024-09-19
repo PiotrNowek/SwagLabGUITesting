@@ -34,7 +34,7 @@ def test_checkout_product_unavailable_simulation(setup):
         driver.find_element(By.ID, "continue").click()
 
         """Simulate product unavailability by removing the product from DOM"""
-        driver.execute_script("document.getElementById('item_0_title_link').remove();")
+        driver.execute_script("document.getElementById('item_4_title_link').remove();")
 
         """Attempt to finalize the order"""
         driver.find_element(By.ID, "finish").click()
